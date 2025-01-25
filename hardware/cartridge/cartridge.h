@@ -15,8 +15,11 @@
 014D - 014D header_checksum
 014E - 014F global_checksum
 */
-#include <cstdint>
-struct rom_header
+#pragma once
+
+#include <stdint.h>
+
+typedef struct
 {
     uint8_t entry_point[4];
     uint8_t nintendo_logo[0x30];
@@ -33,4 +36,7 @@ struct rom_header
     uint8_t game_version;
     uint8_t header_checksum;
     uint16_t global_checksum;
-};
+} rom_header;
+
+//type names are defined at the end;
+
