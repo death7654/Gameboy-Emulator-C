@@ -119,3 +119,8 @@ const char *cartrige_licence_name()
 {
     return (ctx.header->new_licence_code <= 0xA4) ? (LICENCE_CODES[ctx.header->new_licence_code]) : "UNKNOWN"; //-> means the variable inside a struct inside the struct
 }
+const char *cartridge_type()
+{
+    return (ctx.header->cartridge_type <= 0x22) ? (LICENCE_CODES[ctx.header->new_licence_code]) : "UNKNOWN"; //-> means the variable inside a struct inside the struct
+
+}
