@@ -9,7 +9,11 @@
                 "/EHsc",
                 "/nologo",
                 "/Fe${fileDirname}\\compile\\executable\\${fileBasenameNoExtension}.exe",
-                "${file}"
+                "${fileDirname}/*.c",
+                "${fileDirname}/hardware/*.c",
+                "${file}",
+                "/I ${fileDirname}\\SDL3-3.2.0\\include\\SDL3",
+                "/link ${fileDirname}\\SDL3-3.2.0\\lib\\x86\\SDL3.lib ${fileDirname}\\SDL3-3.2.0\\lib\\x86\\SDL2_ttf.lib"
             ],
             "options": {
                 "cwd": "${fileDirname}\\compile\\options"

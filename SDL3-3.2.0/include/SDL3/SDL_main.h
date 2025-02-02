@@ -50,10 +50,10 @@
 #ifndef SDL_main_h_
 #define SDL_main_h_
 
-#include <SDL3/SDL_platform_defines.h>
-#include <SDL3/SDL_stdinc.h>
-#include <SDL3/SDL_error.h>
-#include <SDL3/SDL_events.h>
+#include "SDL_platform_defines.h"
+#include "SDL_stdinc.h"
+#include "SDL_error.h"
+#include "SDL_events.h"
 
 #ifdef SDL_WIKI_DOCUMENTATION_SECTION
 
@@ -260,8 +260,8 @@
 #define main SDL_main
 #endif
 
-#include <SDL3/SDL_init.h>
-#include <SDL3/SDL_begin_code.h>
+#include "SDL_init.h"
+#include "SDL_begin_code.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -659,13 +659,13 @@ extern SDL_DECLSPEC void SDLCALL SDL_GDKSuspendComplete(void);
 }
 #endif
 
-#include <SDL3/SDL_close_code.h>
+#include "SDL_close_code.h"
 
 #if !defined(SDL_MAIN_HANDLED) && !defined(SDL_MAIN_NOIMPL)
     /* include header-only SDL_main implementations */
     #if defined(SDL_MAIN_USE_CALLBACKS) || defined(SDL_MAIN_NEEDED) || defined(SDL_MAIN_AVAILABLE)
         /* platforms which main (-equivalent) can be implemented in plain C */
-        #include <SDL3/SDL_main_impl.h>
+        #include "SDL_main_impl.h"
     #endif
 #endif
 

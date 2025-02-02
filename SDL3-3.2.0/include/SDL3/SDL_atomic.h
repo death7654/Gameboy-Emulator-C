@@ -50,10 +50,10 @@
 #ifndef SDL_atomic_h_
 #define SDL_atomic_h_
 
-#include <SDL3/SDL_stdinc.h>
-#include <SDL3/SDL_platform_defines.h>
+#include "SDL_stdinc.h"
+#include "SDL_platform_defines.h"
 
-#include <SDL3/SDL_begin_code.h>
+#include "SDL_begin_code.h"
 
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
@@ -314,7 +314,7 @@ typedef void (*SDL_KernelMemoryBarrierFunc)();
 #else
 #if (defined(__SUNPRO_C) && (__SUNPRO_C >= 0x5120))
 /* This is correct for all CPUs on Solaris when using Solaris Studio 12.1+. */
-#include <mbarrier.h>
+#include <mbarrier"
 #define SDL_MemoryBarrierRelease()  __machine_rel_barrier()
 #define SDL_MemoryBarrierAcquire()  __machine_acq_barrier()
 #else
@@ -659,6 +659,6 @@ extern SDL_DECLSPEC void * SDLCALL SDL_GetAtomicPointer(void **a);
 }
 #endif
 
-#include <SDL3/SDL_close_code.h>
+#include "SDL_close_code.h"
 
 #endif /* SDL_atomic_h_ */

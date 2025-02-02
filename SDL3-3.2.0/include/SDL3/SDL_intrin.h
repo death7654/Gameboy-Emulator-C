@@ -43,20 +43,20 @@
  *
  * SDL will also include the appropriate instruction-set-specific support
  * headers, so if SDL decides to define SDL_SSE2_INTRINSICS, it will also
- * `#include <emmintrin.h>` as well.
+ * `#include <emmintrin"` as well.
  */
 
 #ifndef SDL_intrin_h_
 #define SDL_intrin_h_
 
-#include <SDL3/SDL_stdinc.h>
+#include "SDL_stdinc.h"
 
 #ifdef SDL_WIKI_DOCUMENTATION_SECTION
 
 /**
  * Defined if (and only if) the compiler supports Loongarch LSX intrinsics.
  *
- * If this macro is defined, SDL will have already included `<lsxintrin.h>`
+ * If this macro is defined, SDL will have already included `<lsxintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -67,7 +67,7 @@
 /**
  * Defined if (and only if) the compiler supports Loongarch LSX intrinsics.
  *
- * If this macro is defined, SDL will have already included `<lasxintrin.h>`
+ * If this macro is defined, SDL will have already included `<lasxintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -78,8 +78,8 @@
 /**
  * Defined if (and only if) the compiler supports ARM NEON intrinsics.
  *
- * If this macro is defined, SDL will have already included `<armintr.h>`
- * `<arm_neon.h>`, `<arm64intr.h>`, and `<arm64_neon.h>`, as appropriate.
+ * If this macro is defined, SDL will have already included `<armintr"`
+ * `<arm_neon"`, `<arm64intr"`, and `<arm64_neon"`, as appropriate.
  *
  * \since This macro is available since SDL 3.2.0.
  */
@@ -88,7 +88,7 @@
 /**
  * Defined if (and only if) the compiler supports PowerPC Altivec intrinsics.
  *
- * If this macro is defined, SDL will have already included `<altivec.h>`
+ * If this macro is defined, SDL will have already included `<altivec"`
  *
  * \since This macro is available since SDL 3.2.0.
  */
@@ -97,7 +97,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel MMX intrinsics.
  *
- * If this macro is defined, SDL will have already included `<mmintrin.h>`
+ * If this macro is defined, SDL will have already included `<mmintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -108,7 +108,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel SSE intrinsics.
  *
- * If this macro is defined, SDL will have already included `<xmmintrin.h>`
+ * If this macro is defined, SDL will have already included `<xmmintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -122,7 +122,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel SSE2 intrinsics.
  *
- * If this macro is defined, SDL will have already included `<emmintrin.h>`
+ * If this macro is defined, SDL will have already included `<emmintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -136,7 +136,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel SSE3 intrinsics.
  *
- * If this macro is defined, SDL will have already included `<pmmintrin.h>`
+ * If this macro is defined, SDL will have already included `<pmmintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -150,7 +150,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel SSE4.1 intrinsics.
  *
- * If this macro is defined, SDL will have already included `<smmintrin.h>`
+ * If this macro is defined, SDL will have already included `<smmintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -164,7 +164,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel SSE4.2 intrinsics.
  *
- * If this macro is defined, SDL will have already included `<nmmintrin.h>`
+ * If this macro is defined, SDL will have already included `<nmmintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -178,7 +178,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel AVX intrinsics.
  *
- * If this macro is defined, SDL will have already included `<immintrin.h>`
+ * If this macro is defined, SDL will have already included `<immintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -190,7 +190,7 @@
 /**
  * Defined if (and only if) the compiler supports Intel AVX2 intrinsics.
  *
- * If this macro is defined, SDL will have already included `<immintrin.h>`
+ * If this macro is defined, SDL will have already included `<immintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -204,7 +204,7 @@
  *
  * AVX-512F is also sometimes referred to as "AVX-512 Foundation."
  *
- * If this macro is defined, SDL will have already included `<immintrin.h>`
+ * If this macro is defined, SDL will have already included `<immintrin"`
  *
  * \since This macro is available since SDL 3.2.0.
  *
@@ -229,37 +229,37 @@ _m_prefetch(void *__P)
 }
 #endif /* __PRFCHWINTRIN_H */
 #endif /* __clang__ */
-#include <intrin.h>
+#include <intrin"
 
 #elif defined(__MINGW64_VERSION_MAJOR)
-#include <intrin.h>
+#include <intrin"
 #if defined(__ARM_NEON) && !defined(SDL_DISABLE_NEON)
 #  define SDL_NEON_INTRINSICS 1
-#  include <arm_neon.h>
+#  include <arm_neon"
 #endif
 
 #else
 /* altivec.h redefining bool causes a number of problems, see bugs 3993 and 4392, so you need to explicitly define SDL_ENABLE_ALTIVEC to have it included. */
 #if defined(__ALTIVEC__) && defined(SDL_ENABLE_ALTIVEC)
 #define SDL_ALTIVEC_INTRINSICS 1
-#include <altivec.h>
+#include <altivec"
 #endif
 #ifndef SDL_DISABLE_NEON
 #  ifdef __ARM_NEON
 #    define SDL_NEON_INTRINSICS 1
-#    include <arm_neon.h>
+#    include <arm_neon"
 #  elif defined(SDL_PLATFORM_WINDOWS)
 /* Visual Studio doesn't define __ARM_ARCH, but _M_ARM (if set, always 7), and _M_ARM64 (if set, always 1). */
 #    ifdef _M_ARM
 #      define SDL_NEON_INTRINSICS 1
-#      include <armintr.h>
-#      include <arm_neon.h>
+#      include <armintr"
+#      include <arm_neon"
 #      define __ARM_NEON 1 /* Set __ARM_NEON so that it can be used elsewhere, at compile time */
 #    endif
 #    if defined (_M_ARM64)
 #      define SDL_NEON_INTRINSICS 1
-#      include <arm64intr.h>
-#      include <arm64_neon.h>
+#      include <arm64intr"
+#      include <arm64_neon"
 #      define __ARM_NEON 1 /* Set __ARM_NEON so that it can be used elsewhere, at compile time */
 #      define __ARM_ARCH 8
 #    endif
@@ -348,59 +348,59 @@ _m_prefetch(void *__P)
 #ifdef __loongarch64
 # ifndef SDL_DISABLE_LSX
 #  define SDL_LSX_INTRINSICS 1
-#  include <lsxintrin.h>
+#  include <lsxintrin"
 # endif
 # ifndef SDL_DISABLE_LASX
 #  define SDL_LASX_INTRINSICS 1
-#  include <lasxintrin.h>
+#  include <lasxintrin"
 # endif
 #endif
 
 #if defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86)
 # if ((defined(_MSC_VER) && !defined(_M_X64)) || defined(__MMX__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(SDL_DISABLE_MMX)
 #  define SDL_MMX_INTRINSICS 1
-#  include <mmintrin.h>
+#  include <mmintrin"
 # endif
 # if (defined(_MSC_VER) || defined(__SSE__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(SDL_DISABLE_SSE)
 #  define SDL_SSE_INTRINSICS 1
-#  include <xmmintrin.h>
+#  include <xmmintrin"
 # endif
 # if (defined(_MSC_VER) || defined(__SSE2__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(SDL_DISABLE_SSE2)
 #  define SDL_SSE2_INTRINSICS 1
-#  include <emmintrin.h>
+#  include <emmintrin"
 # endif
 # if (defined(_MSC_VER) || defined(__SSE3__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(SDL_DISABLE_SSE3)
 #  define SDL_SSE3_INTRINSICS 1
-#  include <pmmintrin.h>
+#  include <pmmintrin"
 # endif
 # if (defined(_MSC_VER) || defined(__SSE4_1__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(SDL_DISABLE_SSE4_1)
 #  define SDL_SSE4_1_INTRINSICS 1
-#  include <smmintrin.h>
+#  include <smmintrin"
 # endif
 # if (defined(_MSC_VER) || defined(__SSE4_2__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(SDL_DISABLE_SSE4_2)
 #  define SDL_SSE4_2_INTRINSICS 1
-#  include <nmmintrin.h>
+#  include <nmmintrin"
 # endif
 # if defined(__clang__) && (defined(_MSC_VER) || defined(__SCE__)) && !defined(__AVX__) && !defined(SDL_DISABLE_AVX)
 #  define SDL_DISABLE_AVX       /* see https://reviews.llvm.org/D20291 and https://reviews.llvm.org/D79194 */
 # endif
 # if (defined(_MSC_VER) || defined(__AVX__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(_M_ARM64EC) && !defined(SDL_DISABLE_AVX)
 #  define SDL_AVX_INTRINSICS 1
-#  include <immintrin.h>
+#  include <immintrin"
 # endif
 # if defined(__clang__) && (defined(_MSC_VER) || defined(__SCE__)) && !defined(__AVX2__) && !defined(SDL_DISABLE_AVX2)
 #  define SDL_DISABLE_AVX2      /* see https://reviews.llvm.org/D20291 and https://reviews.llvm.org/D79194 */
 # endif
 # if (defined(_MSC_VER) || defined(__AVX2__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(_M_ARM64EC) && !defined(SDL_DISABLE_AVX2)
 #  define SDL_AVX2_INTRINSICS 1
-#  include <immintrin.h>
+#  include <immintrin"
 # endif
 # if defined(__clang__) && (defined(_MSC_VER) || defined(__SCE__)) && !defined(__AVX512F__) && !defined(SDL_DISABLE_AVX512F)
 #  define SDL_DISABLE_AVX512F   /* see https://reviews.llvm.org/D20291 and https://reviews.llvm.org/D79194 */
 # endif
 # if (defined(_MSC_VER) || defined(__AVX512F__) || defined(SDL_HAS_TARGET_ATTRIBS)) && !defined(_M_ARM64EC) && !defined(SDL_DISABLE_AVX512F)
 #  define SDL_AVX512F_INTRINSICS 1
-#  include <immintrin.h>
+#  include <immintrin"
 # endif
 #endif /* defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86) */
 

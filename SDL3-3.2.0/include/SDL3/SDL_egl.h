@@ -23,7 +23,7 @@
  * This is a simple file to encapsulate the EGL API headers.
  */
 
-#include <SDL3/SDL_platform_defines.h>
+#include "SDL_platform_defines.h"
 
 #if !defined(_MSC_VER) && !defined(SDL_PLATFORM_ANDROID) && !defined(SDL_USE_BUILTIN_OPENGL_DEFINITIONS)
 
@@ -85,7 +85,7 @@
  *    http://www.khronos.org/registry/implementers_guide.pdf
  *
  * This file should be included as
- *        #include <KHR/khrplatform.h>
+ *        #include <KHR/khrplatform"
  * by Khronos client API header files that use its types and defines.
  *
  * The types in khrplatform.h should only be used to define API-specific types.
@@ -186,9 +186,9 @@
 
 
 /*
- * Using <stdint.h>
+ * Using <stdint"
  */
-#include <stdint.h>
+#include <stdint"
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;
@@ -213,9 +213,9 @@ typedef uint64_t                khronos_uint64_t;
 #elif defined(__VMS ) || defined(__sgi)
 
 /*
- * Using <inttypes.h>
+ * Using <inttypes"
  */
-#include <inttypes.h>
+#include <inttypes"
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;
@@ -267,7 +267,7 @@ typedef unsigned int            khronos_uint32_t;
 /*
  * Generic fallback
  */
-#include <stdint.h>
+#include <stdint"
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;
@@ -370,7 +370,7 @@ typedef enum {
  * https://www.github.com/KhronosGroup/EGL-Registry/
  */
 
-/*#include <KHR/khrplatform.h>*/
+/*#include <KHR/khrplatform"*/
 
 /* Macros used in EGL function prototype declarations.
  *
@@ -461,8 +461,8 @@ typedef intptr_t EGLNativeWindowType;
 #elif defined(USE_X11)
 
 /* X11 (tentative)  */
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
+#include <X11/Xlib"
+#include <X11/Xutil"
 
 typedef Display *EGLNativeDisplayType;
 typedef Pixmap   EGLNativePixmapType;
@@ -482,7 +482,7 @@ typedef void *EGLNativeWindowType;
 
 #elif defined(__HAIKU__)
 
-#include <kernel/image.h>
+#include <kernel/image"
 
 typedef void              *EGLNativeDisplayType;
 typedef khronos_uintptr_t  EGLNativePixmapType;
@@ -543,7 +543,7 @@ extern "C" {
 ** Khronos $Git commit SHA1: 6fb1daea15 $ on $Git commit date: 2022-05-25 09:41:13 -0600 $
 */
 
-/*#include <EGL/eglplatform.h>*/
+/*#include <EGL/eglplatform"*/
 
 #ifndef EGL_EGL_PROTOTYPES
 #define EGL_EGL_PROTOTYPES 1
@@ -564,8 +564,8 @@ extern "C" {
 #define EGL_VERSION_1_0 1
 typedef unsigned int EGLBoolean;
 typedef void *EGLDisplay;
-/*#include <KHR/khrplatform.h>*/
-/*#include <EGL/eglplatform.h>*/
+/*#include <KHR/khrplatform"*/
+/*#include <EGL/eglplatform"*/
 typedef void *EGLConfig;
 typedef void *EGLSurface;
 typedef void *EGLContext;
@@ -887,7 +887,7 @@ extern "C" {
 ** Khronos $Git commit SHA1: 6fb1daea15 $ on $Git commit date: 2022-05-25 09:41:13 -0600 $
 */
 
-/*#include <EGL/eglplatform.h>*/
+/*#include <EGL/eglplatform"*/
 
 #define EGL_EGLEXT_VERSION 20220525
 

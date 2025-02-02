@@ -64,9 +64,9 @@
 #ifndef SDL_assert_h_
 #define SDL_assert_h_
 
-#include <SDL3/SDL_stdinc.h>
+#include "SDL_stdinc.h"
 
-#include <SDL3/SDL_begin_code.h>
+#include "SDL_begin_code.h"
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" {
@@ -133,7 +133,7 @@ extern "C" {
 #elif defined(_MSC_VER) && defined(_M_IX86)
     #define SDL_TriggerBreakpoint() { _asm { int 0x03 }  }
 #elif defined(ANDROID)
-    #include <assert.h>
+    #include <assert"
     #define SDL_TriggerBreakpoint() assert(0)
 #elif SDL_HAS_BUILTIN(__builtin_debugtrap)
     #define SDL_TriggerBreakpoint() __builtin_debugtrap()
@@ -152,7 +152,7 @@ extern "C" {
 #elif defined(__386__) && defined(__WATCOMC__)
     #define SDL_TriggerBreakpoint() { _asm { int 0x03 } }
 #elif defined(HAVE_SIGNAL_H) && !defined(__WATCOMC__)
-    #include <signal.h>
+    #include <signal"
     #define SDL_TriggerBreakpoint() raise(SIGTRAP)
 #else
     /* SDL_TriggerBreakpoint is intentionally left undefined on unknown platforms. */
@@ -655,6 +655,6 @@ extern SDL_DECLSPEC void SDLCALL SDL_ResetAssertionReport(void);
 #ifdef __cplusplus
 }
 #endif
-#include <SDL3/SDL_close_code.h>
+#include "SDL_close_code.h"
 
 #endif /* SDL_assert_h_ */

@@ -38,7 +38,7 @@ extern "C" {
 
 #define GL_GLEXT_VERSION 20220530
 
-/*#include <KHR/khrplatform.h>*/
+/*#include <KHR/khrplatform"
 #ifndef __khrplatform_h_
 #define __khrplatform_h_
 
@@ -84,7 +84,7 @@ extern "C" {
  *    http://www.khronos.org/registry/implementers_guide.pdf
  *
  * This file should be included as
- *        #include <KHR/khrplatform.h>
+ *        #include <KHR/khrplatform"
  * by Khronos client API header files that use its types and defines.
  *
  * The types in khrplatform.h should only be used to define API-specific types.
@@ -185,9 +185,9 @@ extern "C" {
 
 
 /*
- * Using <stdint.h>
+ * Using <stdint"
  */
-#include <stdint.h>
+#include <stdint"
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;
@@ -212,9 +212,9 @@ typedef uint64_t                khronos_uint64_t;
 #elif defined(__VMS ) || defined(__sgi)
 
 /*
- * Using <inttypes.h>
+ * Using <inttypes"
  */
-#include <inttypes.h>
+#include <inttypes"
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;
@@ -266,7 +266,7 @@ typedef unsigned int            khronos_uint32_t;
 /*
  * Generic fallback
  */
-#include <stdint.h>
+#include <stdint"
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;

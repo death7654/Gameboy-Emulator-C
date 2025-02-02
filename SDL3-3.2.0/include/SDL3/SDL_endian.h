@@ -41,7 +41,7 @@
 #ifndef SDL_endian_h_
 #define SDL_endian_h_
 
-#include <SDL3/SDL_stdinc.h>
+#include "SDL_stdinc.h"
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1400)
 /* As of Clang 11, '_m_prefetchw' is conflicting with the winnt.h's version,
@@ -129,10 +129,10 @@ _m_prefetch(void *__P)
  */
 #define SDL_BYTEORDER   SDL_LIL_ENDIAN___or_maybe___SDL_BIG_ENDIAN
 #elif defined(SDL_PLATFORM_LINUX)
-#include <endian.h>
+#include <endian"
 #define SDL_BYTEORDER  __BYTE_ORDER
 #elif defined(SDL_PLATFORM_SOLARIS)
-#include <sys/byteorder.h>
+#include <sys/byteorder"
 #if defined(_LITTLE_ENDIAN)
 #define SDL_BYTEORDER   SDL_LIL_ENDIAN
 #elif defined(_BIG_ENDIAN)
@@ -141,10 +141,10 @@ _m_prefetch(void *__P)
 #error Unsupported endianness
 #endif
 #elif defined(SDL_PLATFORM_OPENBSD) || defined(__DragonFly__)
-#include <endian.h>
+#include <endian"
 #define SDL_BYTEORDER  BYTE_ORDER
 #elif defined(SDL_PLATFORM_FREEBSD) || defined(SDL_PLATFORM_NETBSD)
-#include <sys/endian.h>
+#include <sys/endian"
 #define SDL_BYTEORDER  BYTE_ORDER
 /* predefs from newer gcc and clang versions: */
 #elif defined(__ORDER_LITTLE_ENDIAN__) && defined(__ORDER_BIG_ENDIAN__) && defined(__BYTE_ORDER__)
@@ -212,7 +212,7 @@ _m_prefetch(void *__P)
 #endif /* !SDL_FLOATWORDORDER */
 
 
-#include <SDL3/SDL_begin_code.h>
+#include "SDL_begin_code.h"
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" {
@@ -640,6 +640,6 @@ SDL_FORCE_INLINE Uint32 SDL_Swap64(Uint64 x) { return x_but_byteswapped; }
 #ifdef __cplusplus
 }
 #endif
-#include <SDL3/SDL_close_code.h>
+#include "SDL_close_code.h"
 
 #endif /* SDL_endian_h_ */

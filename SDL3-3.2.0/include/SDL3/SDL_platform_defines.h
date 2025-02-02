@@ -337,7 +337,7 @@
 
 /* Try to find out if we're compiling for WinRT, GDK or non-WinRT/GDK */
 #if defined(_MSC_VER) && defined(__has_include)
-    #if __has_include(<winapifamily.h>)
+    #if __has_include(<winapifamily>)
         #define HAVE_WINAPIFAMILY_H 1
     #else
         #define HAVE_WINAPIFAMILY_H 0
